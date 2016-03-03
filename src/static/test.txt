@@ -1,0 +1,2 @@
+This is a test file.
+Add anything to /static to have it available in your /static directory.

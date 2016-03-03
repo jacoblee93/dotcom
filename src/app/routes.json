@@ -1,0 +1,13 @@
+[
+  {
+    "path": "/",
+    "templates": ["layout.html", "index.html"],
+    "data": {
+      "name": "New Dotcom App"
+    }
+  },
+  {
+    "path": "/*",
+    "templates": ["error/404.html"]
+  }
+]
