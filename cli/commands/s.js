@@ -2,9 +2,9 @@ module.exports = (() => {
 
   'use strict';
 
-  const Command = require('../command.js');
+  const Command = require('cmnd').Command;
 
-  class NewCommand extends Command {
+  class ServerCommand extends Command {
 
     constructor() {
 
@@ -12,7 +12,15 @@ module.exports = (() => {
 
     }
 
-    run(args, flags, vflags) {
+    help() {
+
+      return {
+        description: 'Starts your Dotcom Server'
+      };
+
+    }
+
+    run(args, flags, vflags, callback) {
 
       let spawn = require('cross-spawn-async');
       let child = spawn('npm',  ['start'], {stdio: 'inherit'});
@@ -23,9 +31,8 @@ module.exports = (() => {
 
     }
 
-
   }
 
-  return NewCommand;
+  return ServerCommand;
 
 })();

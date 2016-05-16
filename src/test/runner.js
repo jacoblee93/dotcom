@@ -5,7 +5,7 @@ module.exports = (() => {
   process.env.NODE_ENV = 'test';
 
   const Dotcom = require('dotcom');
-  const TestRunner = Dotcom.mocha.TestRunner;
+  const TestRunner = Dotcom.TestRunner;
 
   const router = Dotcom.require('app/router.js');
 

@@ -4,7 +4,7 @@ module.exports = (() => {
 
   const Dotcom = require('dotcom');
 
-  class IndexTest extends Dotcom.mocha.Test {
+  class IndexTest extends Dotcom.Test {
 
     test(expect) {
 

@@ -1,6 +1,6 @@
 {
   "name": "dotcom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Static Site Generator for Node.js",
   "keywords": [
     "framework",
@@ -13,12 +13,15 @@
   "author": "Keith Horwood",
   "main": "core/module.js",
   "dependencies": {
+    "fxn": "~0.0.3",
+    "cmnd": "~0.0.6",
     "cross-spawn-async": "~2.1.6",
     "async": "~1.5.2",
     "colors": "~1.1.0",
     "dot": "~1.0.3",
     "fs-extra": "~0.26.4",
-    "mime-types": "~2.1.9"
+    "mime-types": "~2.1.9",
+    "inquirer": "~0.11.3"
   },
   "devDependencies": {
     "chai": "~3.5.0",
@@ -29,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/keithwhor/dotcom.git"
+    "url": "https://github.com/poly/dotcom.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/keithwhor/dotcom/issues"
+    "url": "https://github.com/poly/dotcom/issues"
   },
-  "homepage": "https://github.com/keithwhor/dotcom",
+  "homepage": "https://github.com/poly/dotcom",
   "bin": {
-    "dotcom": "cli/index.js"
+    "dotcom": "cli/bin.js"
   }
 }

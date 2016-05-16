@@ -1,4 +1,4 @@
-module.exports = (function() {
+module.exports = (() => {
 
   'use strict';
 
@@ -15,7 +15,7 @@ module.exports = (function() {
   class ActiveTemplate {
 
     /**
-    * @param {Nodal.Template} template The parent template
+    * @param {Dotcom.Template} template The parent template
     * @param {Object} params The parameters for the template
     * @param {Object} data The data for the template
     */
@@ -82,7 +82,7 @@ module.exports = (function() {
     * Retrieves the template from the cache or loads the template and caches it
     * @param {string} The template name (full path in the the ./templates directory).
     * @param {optional boolean} raw Whether or not the template is "raw" (i.e. just an HTML string, no template engine required.) Defaults to false.
-    * @return {Nodal.Template} The template instance
+    * @return {Dotcom.Template} The template instance
     */
     static get(name, raw) {
 
@@ -118,7 +118,7 @@ module.exports = (function() {
     /**
     * Retrieves the template matching the provided name. Lazy loads new templates from disk, otherwise caches.
     * @param {string} templates List of heirarchy of templates (each a full path in the the app/templates directory).
-    * @return {Nodal.Template} The template instance
+    * @return {Dotcom.Template} The template instance
     */
     static generate(name) {
 
@@ -138,7 +138,7 @@ module.exports = (function() {
     /**
     * Retrieves a "raw" template (i.e. just an HTML string, no template engine required.)
     * @param {string} name The traw emplate name (full path in the the app/templates directory).
-    * @return {Nodal.Template} The template instance
+    * @return {Dotcom.Template} The template instance
     */
     static raw(name) {
 
@@ -165,8 +165,8 @@ module.exports = (function() {
     */
     render(params, data) {
 
-      params = params || {};
-      data = data || {};
+      params = Object.create(params || {});
+      data = Object.create(process.env, data || {});
 
       return new ActiveTemplate(this, params, data).render();
 

@@ -8,12 +8,12 @@ module.exports = (() => {
   if (cluster.isMaster) {
 
     const daemon = new Dotcom.Daemon();
-    daemon.start(Dotcom.data.port);
+    daemon.start(process.env.PORT);
 
   } else {
 
     const app = new Dotcom.Application();
-    app.listen(Dotcom.data.port);
+    app.listen(process.env.PORT);
 
   }
 
