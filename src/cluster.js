@@ -7,7 +7,7 @@ module.exports = (() => {
 
   if (cluster.isMaster) {
 
-    const daemon = new Dotcom.Daemon();
+    const daemon = Dotcom.require('app/daemon.js');
     daemon.start(process.env.PORT);
 
   } else {

@@ -166,7 +166,7 @@ module.exports = (() => {
     render(params, data) {
 
       params = Object.create(params || {});
-      data = Object.create(process.env, data || {});
+      data = Object.assign(Object.create(process.env), data || {});
 
       return new ActiveTemplate(this, params, data).render();
 
