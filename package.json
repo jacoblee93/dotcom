@@ -1,6 +1,6 @@
 {
   "name": "dotcom",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Static Site Generator for Node.js",
   "keywords": [
     "framework",

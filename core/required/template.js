@@ -41,19 +41,23 @@ module.exports = (() => {
     * Renders another template template based upon this ActiveTemplate's params and data
     * @return {string}
     */
-    partial(name) {
+    partial(name, data) {
 
-      return this.template.constructor.generate(name).render(this._params, this._data);
+      data = data || {};
+      Object.keys(this._data).forEach(k => data[k] = data.hasOwnProperty(k) ? data[k] : this._data[k]);
+      return this.template.constructor.generate(name).render(this._params, data);
 
     }
 
     /**
     * Renders another raw template template based upon this ActiveTemplate's params and data
-    * @return {string} name The raw partial to render
+    * @return {string}
     */
-    rawPartial(name) {
+    rawPartial(name, data) {
 
-      return this.template.constructor.raw(name).render(this._params, this._data);
+      data = data || {};
+      Object.keys(this._data).forEach(k => data[k] = data.hasOwnProperty(k) ? data[k] : this._data[k]);
+      return this.template.constructor.raw(name).render(this._params, data);
 
     }
 
