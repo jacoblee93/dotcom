@@ -1,6 +1,6 @@
 {
   "name": "dotcom",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Static Site Generator for Node.js",
   "keywords": [
     "framework",
@@ -13,7 +13,7 @@
   "author": "Keith Horwood",
   "main": "core/module.js",
   "dependencies": {
-    "fxn": "~0.0.4",
+    "fxn": "~0.0.6",
     "cmnd": "~0.0.6",
     "cross-spawn-async": "~2.1.6",
     "async": "~1.5.2",
